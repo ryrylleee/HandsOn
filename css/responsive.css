@@ -1,0 +1,12 @@
+/* Tablet Landscape (1024x768) */
+@media (max-width: 1024px) {
+    .dashboard-layout {
+        grid-template-columns: 80px 1fr; /* Collapse sidebar to icons */
+    }
+    .user-profile p { display: none; }
+}
+
+/* Minimum Laptop Target (1366x768) */
+@media (max-width: 1366px) {
+    .video-container { height: 350px; }
+}
