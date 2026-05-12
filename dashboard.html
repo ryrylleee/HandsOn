@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning Journey - HandsOn</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="dashboard-body">
+
+    <header class="dash-header">
+        <div class="dash-title">
+            <h1>Learning Journey</h1>
+            <p>Your path to sign language mastery</p>
+        </div>
+        <div class="dash-controls">
+            <div class="dropdown-wrapper">
+                <button class="icon-btn" onclick="toggleDropdown('settings-menu')">⚙️</button>
+                <div id="settings-menu" class="dropdown-menu settings-dropdown">
+                    <div class="dropdown-header">
+                        <h4>Settings</h4>
+                        <p>Customize your learning experience</p>
+                    </div>
+                    <div class="toggle-row">
+                        <div class="toggle-info">
+                            <span class="icon">📷</span>
+                            <div>
+                                <strong>Camera Calibration</strong>
+                                <span>Optimize hand tracking accuracy</span>
+                            </div>
+                        </div>
+                        <label class="switch"><input type="checkbox" checked><span class="slider"></span></label>
+                    </div>
+                    <div class="toggle-row">
+                        <div class="toggle-info">
+                            <span class="icon">🔔</span>
+                            <div>
+                                <strong>Visual Notifications</strong>
+                                <span>Show on-screen alerts</span>
+                            </div>
+                        </div>
+                        <label class="switch"><input type="checkbox" checked><span class="slider"></span></label>
+                    </div>
+                    <div class="toggle-row">
+                        <div class="toggle-info">
+                            <span class="icon">☀️</span>
+                            <div>
+                                <strong>High Contrast Mode</strong>
+                                <span>Enhance visual accessibility</span>
+                            </div>
+                        </div>
+                        <label class="switch"><input type="checkbox"><span class="slider"></span></label>
+                    </div>
+                    <div class="dropdown-footer">
+                        Changes are saved automatically. All settings use visual indicators for accessibility.
+                    </div>
+                </div>
+            </div>
+
+            <div class="dropdown-wrapper">
+                <button class="icon-btn" onclick="toggleDropdown('profile-menu')">👤</button>
+                <div id="profile-menu" class="dropdown-menu profile-dropdown">
+                    <div class="profile-header">
+                        <div class="avatar-large">👤</div>
+                        <div>
+                            <h4>Karylle De Los Reyes</h4>
+                            <p>student@example.com</p>
+                        </div>
+                    </div>
+                    <a href="#" class="dropdown-item"><span>👤</span> My Profile</a>
+                    <a href="#" class="dropdown-item"><span>📊</span> Learning Stats</a>
+                    <div class="divider"></div>
+                    <a href="login.html" class="dropdown-item logout-text"><span>🚪</span> Logout</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="dash-grid">
+        
+        <aside class="curriculum-timeline">
+            <div class="timeline-category">
+                <div class="category-header">
+                    <div class="category-number">1</div>
+                    <div>
+                        <h2>Alphabets</h2>
+                        <p>Master the foundation of sign language</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-track">
+                    <div class="lesson-card completed">
+                        <span class="status-icon">✓</span>
+                        <span class="lesson-title">Letters A-F</span>
+                        <div class="check-badge">✓</div>
+                    </div>
+
+                    <div class="lesson-card completed">
+                        <span class="status-icon">✓</span>
+                        <span class="lesson-title">Letters G-L</span>
+                        <div class="check-badge">✓</div>
+                    </div>
+
+                    <div class="lesson-card active">
+                        <span class="status-icon">▶</span>
+                        <span class="lesson-title">Letters M-R</span>
+                    </div>
+
+                    <div class="lesson-card locked">
+                        <span class="status-icon">🔒</span>
+                        <span class="lesson-title">Letters S-Z</span>
+                    </div>
+
+                    <div class="lesson-card locked">
+                        <span class="status-icon">🔒</span>
+                        <span class="lesson-title">Numbers 0-10</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="timeline-coming-soon">
+                <span class="dot"></span>
+            </div>
+        </aside>
+
+        <section class="practice-center">
+            <div class="ai-lab-card">
+                <div class="video-container">
+                    <video id="webcam" autoplay playsinline></video>
+                    <canvas id="output_canvas"></canvas>
+                    
+                    <div class="lab-overlay">
+                        <div class="lab-icon">📷</div>
+                        <h2>AI Practice Lab</h2>
+                        <p>Test your skills with AI-powered real-time feedback</p>
+                        <button class="btn-unlock">Complete lessons to unlock</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <aside class="dash-analytics">
+            
+            <div class="dash-card">
+                <div class="card-header-flex">
+                    <div class="icon-circle blue-bg">📖</div>
+                    <div>
+                        <p class="card-subtitle">Vocabulary Bank</p>
+                        <h2 class="card-stat">42 signs</h2>
+                    </div>
+                </div>
+                <a href="#" class="card-link">View all signs →</a>
+            </div>
+
+            <div class="dash-card">
+                <h3 class="card-title">Your Progress</h3>
+                <div class="progress-item">
+                    <div class="progress-labels">
+                        <span>Alphabets</span>
+                        <span>2/5</span>
+                    </div>
+                    <div class="progress-bar-bg"><div class="progress-fill green-fill" style="width: 40%"></div></div>
+                </div>
+                <div class="progress-item">
+                    <div class="progress-labels">
+                        <span>Common Phrases</span>
+                        <span>0/4</span>
+                    </div>
+                    <div class="progress-bar-bg"><div class="progress-fill" style="width: 0%"></div></div>
+                </div>
+                <div class="progress-item">
+                    <div class="progress-labels">
+                        <span>Conversational</span>
+                        <span>0/5</span>
+                    </div>
+                    <div class="progress-bar-bg"><div class="progress-fill" style="width: 0%"></div></div>
+                </div>
+            </div>
+
+            <div class="dash-card pro-tip-card">
+                <h3 class="card-title">💡 Pro Tip</h3>
+                <p>Practice in front of a mirror to ensure your hand shapes are accurate. Visual feedback is key to mastering sign language!</p>
+            </div>
+
+        </aside>
+    </main>
+
+    <script src="js/progress.js"></script>
+    <script src="js/camera.js"></script>
+    <script src="js/validation.js"></script>
+    
+    <script>
+        function toggleDropdown(id) {
+            document.querySelectorAll('.dropdown-menu').forEach(menu => {
+                if(menu.id !== id) menu.classList.remove('show');
+            });
+            document.getElementById(id).classList.toggle('show');
+        }
+        // Close dropdowns when clicking outside
+        window.onclick = function(event) {
+            if (!event.target.matches('.icon-btn')) {
+                document.querySelectorAll('.dropdown-menu').forEach(menu => {
+                    menu.classList.remove('show');
+                });
+            }
+        }
+    </script>
+</body>
+</html>
