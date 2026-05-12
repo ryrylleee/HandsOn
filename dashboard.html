@@ -5,6 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Learning Journey - HandsOn</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <style>
+        /* Extra inline styles to ensure the left timeline scrolls independently */
+        .curriculum-timeline {
+            overflow-y: auto;
+            max-height: calc(100vh - 120px);
+            padding-right: 15px; /* space for scrollbar */
+        }
+        /* Custom scrollbar for the timeline */
+        .curriculum-timeline::-webkit-scrollbar { width: 6px; }
+        .curriculum-timeline::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 10px; }
+        
+        .ai-lab-card {
+            background: #111; /* Darker background before camera loads */
+        }
+    </style>
 </head>
 <body class="dashboard-body">
 
@@ -15,7 +31,9 @@
         </div>
         <div class="dash-controls">
             <div class="dropdown-wrapper">
-                <button class="icon-btn" onclick="toggleDropdown('settings-menu')">⚙️</button>
+                <button class="icon-btn" onclick="toggleDropdown('settings-menu')">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+                </button>
                 <div id="settings-menu" class="dropdown-menu settings-dropdown">
                     <div class="dropdown-header">
                         <h4>Settings</h4>
@@ -23,7 +41,9 @@
                     </div>
                     <div class="toggle-row">
                         <div class="toggle-info">
-                            <span class="icon">📷</span>
+                            <span class="icon">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"></path><circle cx="12" cy="13" r="3"></circle></svg>
+                            </span>
                             <div>
                                 <strong>Camera Calibration</strong>
                                 <span>Optimize hand tracking accuracy</span>
@@ -33,7 +53,9 @@
                     </div>
                     <div class="toggle-row">
                         <div class="toggle-info">
-                            <span class="icon">🔔</span>
+                            <span class="icon">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+                            </span>
                             <div>
                                 <strong>Visual Notifications</strong>
                                 <span>Show on-screen alerts</span>
@@ -43,7 +65,9 @@
                     </div>
                     <div class="toggle-row">
                         <div class="toggle-info">
-                            <span class="icon">☀️</span>
+                            <span class="icon">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                            </span>
                             <div>
                                 <strong>High Contrast Mode</strong>
                                 <span>Enhance visual accessibility</span>
@@ -58,19 +82,32 @@
             </div>
 
             <div class="dropdown-wrapper">
-                <button class="icon-btn" onclick="toggleDropdown('profile-menu')">👤</button>
+                <button class="icon-btn" onclick="toggleDropdown('profile-menu')">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                </button>
                 <div id="profile-menu" class="dropdown-menu profile-dropdown">
                     <div class="profile-header">
-                        <div class="avatar-large">👤</div>
+                        <div class="avatar-large">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                        </div>
                         <div>
                             <h4>Karylle De Los Reyes</h4>
                             <p>student@example.com</p>
                         </div>
                     </div>
-                    <a href="#" class="dropdown-item"><span>👤</span> My Profile</a>
-                    <a href="#" class="dropdown-item"><span>📊</span> Learning Stats</a>
+                    <a href="#" class="dropdown-item">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg> 
+                        My Profile
+                    </a>
+                    <a href="#" class="dropdown-item">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg> 
+                        Learning Stats
+                    </a>
                     <div class="divider"></div>
-                    <a href="login.html" class="dropdown-item logout-text"><span>🚪</span> Logout</a>
+                    <a href="login.html" class="dropdown-item logout-text">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg> 
+                        Logout
+                    </a>
                 </div>
             </div>
         </div>
@@ -81,59 +118,87 @@
         <aside class="curriculum-timeline">
             <div class="timeline-category">
                 <div class="category-header">
-                    <div class="category-number">1</div>
+                    <div class="category-number" style="background: var(--state-locked);">1</div>
                     <div>
                         <h2>Alphabets</h2>
                         <p>Master the foundation of sign language</p>
                     </div>
                 </div>
                 
-                <div class="timeline-track">
-                    <div class="lesson-card completed">
-                        <span class="status-icon">✓</span>
+                <div class="timeline-track" style="border-left-color: var(--state-locked);">
+                    <a href="module-placeholder.html" class="lesson-card locked" style="text-decoration: none;">
+                        <span class="status-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg></span>
                         <span class="lesson-title">Letters A-F</span>
-                        <div class="check-badge">✓</div>
-                    </div>
+                    </a>
 
-                    <div class="lesson-card completed">
-                        <span class="status-icon">✓</span>
+                    <a href="module-placeholder.html" class="lesson-card locked" style="text-decoration: none;">
+                        <span class="status-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg></span>
                         <span class="lesson-title">Letters G-L</span>
-                        <div class="check-badge">✓</div>
-                    </div>
+                    </a>
 
-                    <div class="lesson-card active">
-                        <span class="status-icon">▶</span>
+                    <a href="module-placeholder.html" class="lesson-card locked" style="text-decoration: none;">
+                        <span class="status-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg></span>
                         <span class="lesson-title">Letters M-R</span>
-                    </div>
+                    </a>
 
-                    <div class="lesson-card locked">
-                        <span class="status-icon">🔒</span>
+                    <a href="module-placeholder.html" class="lesson-card locked" style="text-decoration: none;">
+                        <span class="status-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg></span>
                         <span class="lesson-title">Letters S-Z</span>
-                    </div>
-
-                    <div class="lesson-card locked">
-                        <span class="status-icon">🔒</span>
+                    </a>
+                    
+                    <a href="module-placeholder.html" class="lesson-card locked" style="text-decoration: none;">
+                        <span class="status-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg></span>
                         <span class="lesson-title">Numbers 0-10</span>
-                    </div>
+                    </a>
                 </div>
             </div>
-            
-            <div class="timeline-coming-soon">
-                <span class="dot"></span>
+
+            <div class="timeline-category" style="margin-top: 3rem;">
+                <div class="category-header">
+                    <div class="category-number" style="background: var(--state-locked);">2</div>
+                    <div>
+                        <h2>Common Phrases</h2>
+                        <p>Learn everyday expressions</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-track" style="border-left-color: var(--state-locked);">
+                    <a href="module-placeholder.html" class="lesson-card locked" style="text-decoration: none;">
+                        <span class="status-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg></span>
+                        <span class="lesson-title">Greetings</span>
+                    </a>
+                    <a href="module-placeholder.html" class="lesson-card locked" style="text-decoration: none;">
+                        <span class="status-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg></span>
+                        <span class="lesson-title">Polite Expressions</span>
+                    </a>
+                    <a href="module-placeholder.html" class="lesson-card locked" style="text-decoration: none;">
+                        <span class="status-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg></span>
+                        <span class="lesson-title">Basic Questions</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="timeline-coming-soon" style="margin-top: 2rem; text-align: center; color: var(--text-dim); font-size: 0.85rem;">
+                <span>Keep learning to unlock more phases!</span>
             </div>
         </aside>
 
         <section class="practice-center">
             <div class="ai-lab-card">
                 <div class="video-container">
-                    <video id="webcam" autoplay playsinline></video>
-                    <canvas id="output_canvas"></canvas>
+                    <video id="webcam" playsinline style="display: none;"></video>
+                    <canvas id="output_canvas" style="display: none;"></canvas>
                     
-                    <div class="lab-overlay">
-                        <div class="lab-icon">📷</div>
+                    <div class="lab-overlay" id="practice-overlay">
+                        <div class="lab-icon" style="margin-bottom: 1rem;">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M23 7l-7 5 7 5V7z"></path><rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect></svg>
+                        </div>
                         <h2>AI Practice Lab</h2>
-                        <p>Test your skills with AI-powered real-time feedback</p>
-                        <button class="btn-unlock">Complete lessons to unlock</button>
+                        <p>Turn on your camera to get real-time feedback on your signs.</p>
+                        <button id="start-camera-btn" class="btn-primary" style="margin-top: 1.5rem; display: flex; align-items: center; gap: 8px;">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 7l-7 5 7 5V7z"></path><rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect></svg>
+                            Start Camera
+                        </button>
                     </div>
                 </div>
             </div>
@@ -143,7 +208,9 @@
             
             <div class="dash-card">
                 <div class="card-header-flex">
-                    <div class="icon-circle blue-bg">📖</div>
+                    <div class="icon-circle blue-bg">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+                    </div>
                     <div>
                         <p class="card-subtitle">Vocabulary Bank</p>
                         <h2 class="card-stat">42 signs</h2>
@@ -157,9 +224,9 @@
                 <div class="progress-item">
                     <div class="progress-labels">
                         <span>Alphabets</span>
-                        <span>2/5</span>
+                        <span>0/5</span>
                     </div>
-                    <div class="progress-bar-bg"><div class="progress-fill green-fill" style="width: 40%"></div></div>
+                    <div class="progress-bar-bg"><div class="progress-fill green-fill" style="width: 0%"></div></div>
                 </div>
                 <div class="progress-item">
                     <div class="progress-labels">
@@ -178,32 +245,56 @@
             </div>
 
             <div class="dash-card pro-tip-card">
-                <h3 class="card-title">💡 Pro Tip</h3>
+                <h3 class="card-title" style="display: flex; align-items: center; gap: 8px;">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#a7f3d0" stroke-width="2"><path d="M9 18h6"></path><path d="M10 22h4"></path><path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1.45.62 2.84 1.5 3.5.76.76 1.23 1.52 1.41 2.5"></path></svg>
+                    Pro Tip
+                </h3>
                 <p>Practice in front of a mirror to ensure your hand shapes are accurate. Visual feedback is key to mastering sign language!</p>
             </div>
 
         </aside>
     </main>
 
-    <script src="js/progress.js"></script>
-    <script src="js/camera.js"></script>
-    <script src="js/validation.js"></script>
-    
     <script>
+        // Dropdown Logic
         function toggleDropdown(id) {
             document.querySelectorAll('.dropdown-menu').forEach(menu => {
                 if(menu.id !== id) menu.classList.remove('show');
             });
             document.getElementById(id).classList.toggle('show');
         }
-        // Close dropdowns when clicking outside
+
         window.onclick = function(event) {
-            if (!event.target.matches('.icon-btn')) {
+            if (!event.target.closest('.icon-btn')) {
                 document.querySelectorAll('.dropdown-menu').forEach(menu => {
                     menu.classList.remove('show');
                 });
             }
         }
+
+        // Camera Permission Logic
+        const startCamBtn = document.getElementById('start-camera-btn');
+        const videoElement = document.getElementById('webcam');
+        const canvasElement = document.getElementById('output_canvas');
+        const practiceOverlay = document.getElementById('practice-overlay');
+
+        startCamBtn.addEventListener('click', async () => {
+            try {
+                // Request camera permission
+                const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+                videoElement.srcObject = stream;
+                
+                // Hide overlay and show video once permission is granted
+                practiceOverlay.style.display = 'none';
+                videoElement.style.display = 'block';
+                canvasElement.style.display = 'block';
+                
+                // Play the video stream
+                videoElement.play();
+            } catch (err) {
+                alert("Camera access was denied. Please allow camera access in your browser settings to use the AI Practice Lab.");
+            }
+        });
     </script>
 </body>
 </html>
