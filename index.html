@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HandsOn - FSL Validator</title>
+    <link rel="stylesheet" href="./src/css/main.css">
+    
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/control_utils/control_utils.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="app-layout">
+        
+        <main class="camera-section">
+            <div class="header">
+                <h1>HandsOn</h1>
+                <p>Live FSL Gesture Validation</p>
+            </div>
+            
+            <div class="video-container">
+                <video class="input-video" playsinline></video>
+                <canvas class="output-canvas" width="640" height="480"></canvas>
+                
+                <div id="status-badge" class="status-badge waiting">
+                    Select a letter to start
+                </div>
+            </div>
+        </main>
+
+        <aside class="sidebar">
+            <div class="target-display">
+                <h2>Target Sign: <span id="current-target-text">-</span></h2>
+                <div class="image-box">
+                    <img id="reference-image" src="" alt="Select a letter" style="display: none;">
+                    <p id="placeholder-text">Waiting for selection...</p>
+                </div>
+            </div>
+
+            <div class="controls">
+                <h3>Select a Letter</h3>
+                <div class="keyboard-grid" id="keyboard">
+                    </div>
+            </div>
+        </aside>
+
+    </div>
+
+    <script type="module" src="./src/js/main.js"></script>
+</body>
+</html>
