@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Learning Journey - HandsOn</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
     <link rel="stylesheet" href="css/responsive.css">
     <style>
         /* Extra inline styles to ensure the left timeline scrolls independently */
@@ -126,30 +126,25 @@
                 </div>
                 
                 <div class="timeline-track" style="border-left-color: var(--state-locked);">
-                    <a href="module-placeholder.html" class="lesson-card locked" style="text-decoration: none;">
+                    <button class="lesson-card lesson-btn" data-letter="A" type="button">
                         <span class="status-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg></span>
-                        <span class="lesson-title">Letters A-F</span>
-                    </a>
+                        <span class="lesson-title">Letters A</span>
+                    </button>
 
-                    <a href="module-placeholder.html" class="lesson-card locked" style="text-decoration: none;">
+                    <button class="lesson-card lesson-btn" data-letter="B" type="button">
                         <span class="status-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg></span>
-                        <span class="lesson-title">Letters G-L</span>
-                    </a>
+                        <span class="lesson-title">Letters B</span>
+                    </button>
 
-                    <a href="module-placeholder.html" class="lesson-card locked" style="text-decoration: none;">
+                    <button class="lesson-card lesson-btn" data-letter="C" type="button">
                         <span class="status-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg></span>
-                        <span class="lesson-title">Letters M-R</span>
-                    </a>
+                        <span class="lesson-title">Letters C</span>
+                    </button>
 
-                    <a href="module-placeholder.html" class="lesson-card locked" style="text-decoration: none;">
+                    <button class="lesson-card lesson-btn" data-letter="D" type="button">
                         <span class="status-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg></span>
-                        <span class="lesson-title">Letters S-Z</span>
-                    </a>
-                    
-                    <a href="module-placeholder.html" class="lesson-card locked" style="text-decoration: none;">
-                        <span class="status-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg></span>
-                        <span class="lesson-title">Numbers 0-10</span>
-                    </a>
+                        <span class="lesson-title">Letters D</span>
+                    </button>
                 </div>
             </div>
 
@@ -186,9 +181,25 @@
         <section class="practice-center">
             <div class="ai-lab-card">
                 <div class="video-container">
-                    <video id="webcam" playsinline style="display: none;"></video>
-                    <canvas id="output_canvas" style="display: none;"></canvas>
-                    
+
+                    <video
+                        id="webcam"
+                        class="input-video"
+                        playsinline
+                        style="display:none;"
+                    ></video>
+
+                    <canvas
+                        id="output_canvas"
+                        class="output-canvas"
+                        width="640"
+                        height="480"
+                        style="display:none;"
+                    ></canvas>
+
+                    <div id="status-badge" class="status-badge waiting">
+                        Select a lesson to begin
+                    </div>                    
                     <div class="lab-overlay" id="practice-overlay">
                         <div class="lab-icon" style="margin-bottom: 1rem;">
                             <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M23 7l-7 5 7 5V7z"></path><rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect></svg>
@@ -206,6 +217,28 @@
 
         <aside class="dash-analytics">
             
+            <div class="dash-card">
+                <h3 class="card-title">Target Sign</h3>
+
+                <div class="image-box">
+                    <img
+                        id="reference-image"
+                        src=""
+                        alt="Reference Sign"
+                        style="display:none;"
+                    />
+
+                    <p id="placeholder-text">
+                        Select a lesson to begin
+                    </p>
+                </div>
+
+                <h2 style="margin-top:1rem;">
+                    Current:
+                    <span id="current-target-text">-</span>
+                </h2>
+            </div>
+
             <div class="dash-card">
                 <div class="card-header-flex">
                     <div class="icon-circle blue-bg">
@@ -271,30 +304,12 @@
                 });
             }
         }
-
-        // Camera Permission Logic
-        const startCamBtn = document.getElementById('start-camera-btn');
-        const videoElement = document.getElementById('webcam');
-        const canvasElement = document.getElementById('output_canvas');
-        const practiceOverlay = document.getElementById('practice-overlay');
-
-        startCamBtn.addEventListener('click', async () => {
-            try {
-                // Request camera permission
-                const stream = await navigator.mediaDevices.getUserMedia({ video: true });
-                videoElement.srcObject = stream;
-                
-                // Hide overlay and show video once permission is granted
-                practiceOverlay.style.display = 'none';
-                videoElement.style.display = 'block';
-                canvasElement.style.display = 'block';
-                
-                // Play the video stream
-                videoElement.play();
-            } catch (err) {
-                alert("Camera access was denied. Please allow camera access in your browser settings to use the AI Practice Lab.");
-            }
-        });
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/control_utils/control_utils.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js"></script>
+
+    <script type="module" src="./js/main.js"></script>
 </body>
 </html>

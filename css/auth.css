@@ -1,0 +1,216 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Open+Sans:wght@400;600;700&family=Roboto:wght@400;500;700&display=swap');
+
+/* css/auth.css - Authentication Pages (Signup/Login) */
+
+/* --- Global Variables --- */
+:root {
+    /* General & Landing Variables */
+    --bg-dark: #22242a; 
+    --bg-card: #2c2f36; 
+    --text-light: #ffffff;
+    --text-muted: #9ca3af;
+    --gradient-primary: linear-gradient(135deg, #00e5ff, #00e676);
+    --border-subtle: rgba(255, 255, 255, 0.08);
+
+    /* Dashboard Specific Variables */
+    --bg-darker: #1f2128;
+    --dash-card: #2c2f36;
+    --text-main: #ffffff;
+    --text-dim: #9ca3af;
+    --state-green: #34d399;
+    --state-blue: #0ea5e9;
+    --state-locked: #374151;
+    --border-line: rgba(255, 255, 255, 0.1);
+}
+
+body {
+    margin: 0;
+    font-family: 'Inter', -apple-system, sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+/* Headings */
+h1, h2, h3 {
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* Buttons and Navigation Links */
+button, a[href], .btn-primary, .btn-secondary, .btn-signin, .navbar, .nav-link, .dropdown-item {
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Labels */
+label {
+    font-family: 'Inter', sans-serif;
+}
+
+/* --- Authentication Layout --- */
+.auth-layout {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    background-color: var(--bg-dark);
+}
+
+.auth-container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.auth-banner {
+    flex: 1;
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7)), url('../assets/hands-bg.jpg') center/cover;
+    display: flex;
+    align-items: flex-end;
+    padding: 4rem;
+    position: relative;
+}
+
+.banner-text h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.banner-text p {
+    color: var(--text-light);
+    opacity: 0.9;
+    font-size: 1.1rem;
+    max-width: 90%;
+}
+
+.auth-form-section {
+    flex: 1;
+    padding: 4rem 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: var(--bg-dark);
+}
+
+.back-link {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.9rem;
+    margin-bottom: 2rem;
+    display: inline-block;
+}
+
+.auth-header h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.auth-header p {
+    color: var(--text-muted);
+    margin-bottom: 2.5rem;
+}
+
+.input-group {
+    margin-bottom: 1.5rem;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: 8px;
+    padding: 0 1rem;
+}
+
+.input-wrapper input {
+    background: transparent;
+    border: none;
+    color: var(--text-light);
+    width: 100%;
+    padding: 1rem 0.5rem;
+    outline: none;
+}
+
+.input-wrapper input::placeholder {
+    color: var(--text-muted);
+}
+
+.icon, .icon-right {
+    color: var(--text-muted);
+    opacity: 0.7;
+}
+
+.icon-right {
+    cursor: pointer;
+}
+
+.form-actions {
+    text-align: right;
+    margin-bottom: 2rem;
+}
+
+.forgot-link, .auth-switch a {
+    color: #00e5ff;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.auth-submit {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.auth-switch {
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.visual-alert {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background-color: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border-subtle);
+    padding: 1rem;
+    border-radius: 8px;
+    margin-top: 2rem;
+}
+
+.visual-alert p {
+    margin: 0;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+/* --- Buttons --- */
+.btn-primary {
+    background: var(--gradient-primary);
+    color: #000;
+    font-weight: 600;
+    padding: 0.75rem 2rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-secondary {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--text-light);
+    font-weight: 600;
+    padding: 0.75rem 2rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}

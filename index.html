@@ -4,23 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HandsOn - FSL Learning</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/logo.png">
+    
+    <!-- Google Fonts Import for Performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
+    
+    <!-- Navbar -->
     <nav class="navbar">
-        <div class="logo">HandsOn</div>
-        <a href="login.html" class="btn-signin" style="text-decoration: none;">Sign In</a>
+        
+        <div class="logo-wrapper">
+            <!-- Replace 'assets/logo.png' with your actual file path -->
+            <img src="assets/logo.png" alt="HandsOn Logo" class="nav-logo-img">
+            <div class="logo-text">HandsOn</div>
+        </div>
+                
+        <!-- The centralized pill menu with correct # IDs -->
+        <ul class="nav-links">
+            <li><a href="#home">HOME</a></li>
+            <li><a href="#about-section">ABOUT</a></li>
+            <li><a href="#features-section">FEATURES</a></li>
+            <li><a href="#footer">CONTACT US</a></li>
+        </ul>
+
+        <!-- The two buttons on the right -->
+        <div class="nav-actions">
+            <a href="login.html" class="btn-solid">Sign In</a>
+        </div>
     </nav>
 
-    <header class="hero">
+    <!-- Hero Section -->
+    <header id="home" class="hero">
         <div class="hero-content">
             <span class="pill-badge">AI-Powered Learning</span>
             <h1>Your Voice,<br><span class="text-gradient">Visualized</span></h1>
             <p>Master Filipino Sign Language with AI-powered hand tracking, real-time feedback, and a personalized learning journey designed for the Deaf and hard of hearing community.</p>
             
             <div class="hero-actions">
-                <a href="login.html" class="btn-primary">Start Learning →</a>
-                <button class="btn-secondary">Watch Demo</button>
+                <a href="login.html" class="btn-primary">Start Learning</a>
             </div>
 
             <div class="hero-stats">
@@ -39,58 +65,190 @@
             </div>
         </div>
         <div class="hero-image">
-            <img src="images/hero-image.jpg" alt="Hero Image">
+            <img src="assets/hero.png" alt="Hero Image">
         </div>
     </header>
 
-    <section class="features-section">
+    <!-- About Us Section -->
+    <section id="about-section" class="about-section fade-in-section">
+        <div class="about-image">
+            <!-- Placeholder for a team photo or graphic -->
+            <div class="image-placeholder">
+                <img src="assets/about-us.png" alt="HandsOn Logo" class="about-logo-img">
+            </div>
+        </div>
+        <div class="about-content">
+            <h2>Bridging the Gap with Technology</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            
+            <ul class="about-list">
+                <li><span class="check-icon">✓</span> AI-driven continuous feedback loop</li>
+                <li><span class="check-icon">✓</span> Designed specifically for FSL syntax</li>
+                <li><span class="check-icon">✓</span> Empowering communication everywhere</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features-section" class="features-section fade-in-section">
         <h2>Learn at Your Own Pace</h2>
         <p>Our platform combines cutting-edge AI with accessibility-first design</p>
         
         <div class="features-grid">
+            <!-- Card 1 -->
             <div class="feature-card">
-                <div class="feature-icon">📷</div>
+                <div class="feature-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 4h3l2-2h6l2 2h3a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm8 3a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 2a3 3 0 1 1 0 6 3 3 0 0 1 0-6z"/></svg>
+                </div>
                 <h3>AI Hand Tracking</h3>
                 <p>Advanced computer vision analyzes your hand movements in real-time for accurate feedback.</p>
             </div>
+            
+            <!-- Card 2 -->
             <div class="feature-card">
-                <div class="feature-icon">⚡</div>
+                <div class="feature-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                </div>
                 <h3>Instant Feedback</h3>
                 <p>Get immediate visual cues with color-coded indicators to correct your form instantly.</p>
             </div>
+            
+            <!-- Card 3 -->
             <div class="feature-card">
-                <div class="feature-icon">📖</div>
+                <div class="feature-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 4a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4zm2 2v12h14V6H5zm2 2h10v2H7V8zm0 4h10v2H7v-2z"/></svg>
+                </div>
                 <h3>Structured Path</h3>
                 <p>Follow a carefully designed curriculum from basics to advanced FSL conversations.</p>
             </div>
+            
+            <!-- Card 4 -->
             <div class="feature-card">
-                <div class="feature-icon">👥</div>
+                <div class="feature-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/></svg>
+                </div>
                 <h3>Community Support</h3>
                 <p>Connect with other learners and native signers in a supportive environment.</p>
             </div>
+            
+            <!-- Card 5 -->
             <div class="feature-card">
-                <div class="feature-icon">✅</div>
+                <div class="feature-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-9 14l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                </div>
                 <h3>Progress Tracking</h3>
                 <p>Maintain streaks, earn achievements, and visualize your learning journey.</p>
             </div>
+            
+            <!-- Card 6 -->
             <div class="feature-card">
-                <div class="feature-icon">🔬</div>
+                <div class="feature-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 21H3v-2h18v2zM13 2h-2v6h2V2zm4.29 14l-2.25-3H8.96l-2.25 3h10.58zM8.5 11l-2.5 3.33V18h12v-3.67L15.5 11h-7z"/></svg>
+                </div>
                 <h3>Practice Labs</h3>
                 <p>Test your skills in AI-powered scenarios that simulate real FSL conversations.</p>
             </div>
         </div>
     </section>
 
-    <section class="cta-section">
+    <!-- CTA Section -->
+    <section id="cta-section" class="cta-section fade-in-section">
         <div class="cta-box">
             <h2>Ready to Begin?</h2>
             <p>Join thousands of learners mastering sign language with AI assistance</p>
             <a href="login.html" class="btn-primary">Start Your Journey</a>
         </div>
     </section>
+    
+    <!-- Main Footer -->
+    <footer id="footer" class="main-footer">
+        <div class="footer-top">
+            <div class="footer-brand">
+                <div class="logo">HandsOn</div>
+                <p>Empowering the Deaf and hard of hearing community with AI-driven Filipino Sign Language learning. Experience the future of inclusive education with HandsOn.</p>
+            </div>
+            
+            <div class="footer-socials">
+                <!-- Facebook -->
+                <a href="#" class="social-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 13.5h2.5l1-4H14v-2c0-1.03 0-2 2-2h1.5V2.14c-.326-.043-1.557-.14-2.857-.14C11.928 2 10 3.657 10 6.7v2.8H7v4h3V22h4v-8.5z"/></svg>
+                </a>
+                <!-- TikTok -->
+                <a href="#" class="social-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/></svg>
+                </a>
+                <!-- LinkedIn -->
+                <a href="#" class="social-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v14h5v-14zm7.982 0h-4.968v14h4.969v-7.396c0-1.979.375-3.904 2.834-3.904 2.417 0 2.449 2.274 2.449 4.029v7.271h4.988v-7.982c0-4.275-.92-7.541-5.882-7.541-2.396 0-4.004 1.314-4.676 2.569h-.033V8z"/></svg>
+                </a>
+                <!-- Instagram -->
+                <a href="#" class="social-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                </a>
+            </div>
+        </div>
 
-    <footer>
-        <p>© 2026 HandsOn. Empowering communication through visual learning.</p>
+        <div class="footer-bottom">
+            <p>&copy; 2026 <span class="highlight-text">HandsOn EduTech Inc.</span> All rights reserved.</p>
+            <div class="footer-links">
+                <a href="#">Terms & Conditions</a>
+                <span class="separator">|</span>
+                <a href="#">Privacy Policy</a>
+            </div>
+        </div>
     </footer>
+
+    <!-- Scroll Animation JavaScript -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            
+            // --- 1. SCROLL FADE ANIMATION ---
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                    } else {
+                        entry.target.classList.remove('is-visible');
+                    }
+                });
+            }, {
+                threshold: 0.15 
+            });
+
+            const hiddenElements = document.querySelectorAll('.fade-in-section');
+            hiddenElements.forEach((el) => observer.observe(el));
+
+            // --- 2. SCROLL SPY FOR NAVBAR LINKS ---
+            const sections = document.querySelectorAll("header[id], section[id], footer[id]");
+            const navLinks = document.querySelectorAll(".nav-links a");
+
+            window.addEventListener("scroll", () => {
+                let current = "";
+                
+                // Find out which section is currently on the screen
+                sections.forEach((section) => {
+                    const sectionTop = section.offsetTop;
+                    if (scrollY >= (sectionTop - 200)) {
+                        current = section.getAttribute("id");
+                    }
+                });
+
+                // THE FIX: Check if we are at the absolute bottom of the page!
+                // If we hit the bottom, force the active section to be the footer.
+                if ((window.innerHeight + Math.round(window.scrollY)) >= document.body.offsetHeight - 50) {
+                    current = "footer";
+                }
+
+                // Remove 'active' from all links, and add it to the current one
+                navLinks.forEach((link) => {
+                    link.classList.remove("active");
+                    if (link.getAttribute("href") === `#${current}`) {
+                        link.classList.add("active");
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>
