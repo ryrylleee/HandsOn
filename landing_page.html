@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignFlow - Your Voice, Visualized</title>
+    <style>
+        /* --- CSS STYLES --- */
+        :root {
+            --bg-dark: #2A2C31;
+            --nav-bg: #2A2C31;
+            --text-main: #FFFFFF;
+            --text-muted: #A0AAB2;
+            --btn-dark: #3A3D44;
+            --cyan: #00DBDB;
+            --green: #4ADE80;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Navigation Bar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            background-color: var(--nav-bg);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .logo {
+            font-size: 1.4rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        /* Reusable Buttons */
+        button {
+            cursor: pointer;
+            font-family: inherit;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            opacity: 0.9;
+        }
+
+        .btn-signin {
+            background-color: var(--btn-dark);
+            color: var(--text-main);
+            padding: 10px 24px;
+            font-size: 0.9rem;
+        }
+
+        .btn-primary {
+            background-color: var(--cyan);
+            color: #000000;
+            padding: 16px 32px;
+            font-size: 1.05rem;
+        }
+
+        .btn-secondary {
+            background-color: var(--btn-dark);
+            color: var(--text-main);
+            padding: 16px 32px;
+            font-size: 1.05rem;
+        }
+
+        /* Main Hero Section */
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 60px 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+            flex: 1;
+            gap: 60px;
+        }
+
+        .hero-text-content {
+            flex: 1;
+            max-width: 600px;
+        }
+
+        .badge-outline {
+            display: inline-block;
+            color: var(--cyan);
+            border: 1px solid rgba(0, 219, 219, 0.4);
+            background-color: rgba(0, 219, 219, 0.05);
+            padding: 8px 16px;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-bottom: 24px;
+        }
+
+        h1 {
+            font-size: 4.5rem;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            font-weight: 700;
+            letter-spacing: -1px;
+        }
+
+        .gradient-text {
+            background: linear-gradient(90deg, var(--cyan), var(--green));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        p.subtitle {
+            color: var(--text-muted);
+            font-size: 1.15rem;
+            line-height: 1.6;
+            margin-bottom: 40px;
+            max-width: 90%;
+        }
+
+        .cta-group {
+            display: flex;
+            gap: 16px;
+        }
+
+        /* Right Side Image Layout */
+        .hero-image-container {
+            flex: 1;
+            position: relative;
+            display: flex;
+            justify-content: center;
+        }
+
+        .main-image {
+            width: 100%;
+            max-width: 550px;
+            border-radius: 24px;
+            object-fit: cover;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+
+        .floating-badge {
+            position: absolute;
+            top: 24px;
+            right: 40px;
+            background-color: rgba(30, 30, 30, 0.7);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            color: var(--text-main);
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .icon-camera {
+            color: var(--green);
+            font-size: 1.1rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .hero {
+                flex-direction: column;
+                padding: 40px 20px;
+                text-align: center;
+            }
+            .hero-text-content {
+                max-width: 100%;
+            }
+            p.subtitle {
+                margin: 0 auto 40px auto;
+            }
+            .cta-group {
+                justify-content: center;
+            }
+            h1 {
+                font-size: 3.5rem;
+            }
+            .floating-badge {
+                right: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 { font-size: 2.8rem; }
+            .cta-group {
+                flex-direction: column;
+            }
+            .navbar { padding: 15px 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="logo">SignFlow</div>
+        <button class="btn-signin" onclick="handleAuth()">Sign In</button>
+    </nav>
+
+    <!-- Main Hero Section -->
+    <main class="hero">
+        
+        <!-- Left Text Content -->
+        <div class="hero-text-content">
+            <div class="badge-outline">AI-Powered Learning</div>
+            <h1>
+                Your Voice,<br>
+                <span class="gradient-text">Visualized</span>
+            </h1>
+            <p class="subtitle">
+                Master sign language with AI-powered hand tracking, real-time feedback, and a personalized learning journey designed for the Deaf and hard of hearing community.
+            </p>
+            <div class="cta-group">
+                <button class="btn-primary" onclick="startApp()">Start Learning <span>&rarr;</span></button>
+                <button class="btn-secondary" onclick="openDemo()">Watch Demo</button>
+            </div>
+        </div>
+
+        <!-- Right Image Content -->
+        <div class="hero-image-container">
+            <div class="floating-badge">
+                <span class="icon-camera">&#128247;</span> AI Practice Lab
+            </div>
+            <!-- Referencing the exact image name provided -->
+            <img src="image_4a2af5.jpg" alt="SignFlow AI Practice Demo" class="main-image">
+        </div>
+
+    </main>
+
+    <!-- --- JAVASCRIPT --- -->
+    <script>
+        // Simple interactions for the UI buttons
+        function handleAuth() {
+            alert("Redirecting to the Sign In portal...");
+        }
+
+        function startApp() {
+            // This is where you would link to your live Flask dashboard/webcam UI
+            console.log("Initializing AI hand tracking module...");
+            alert("Launching the HandsOn AI Practice Lab!");
+        }
+
+        function openDemo() {
+            alert("Loading demo video...");
+        }
+    </script>
+
+</body>
+</html>
