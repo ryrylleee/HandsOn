@@ -50,6 +50,7 @@ label {
 .auth-layout {
     margin: 0;
     height: 100vh;
+    overflow: hidden; /* Locks the overall page height so it never stretches */
     display: flex;
     background-color: var(--bg-dark);
 }
@@ -62,11 +63,13 @@ label {
 
 .auth-banner {
     flex: 1;
-    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7)), url('../assets/hands-bg.jpg') center/cover;
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7)), url('../assets/login picture.png') center/cover;
     display: flex;
     align-items: flex-end;
     padding: 4rem;
     position: relative;
+    height: 100%; /* Forces the banner to stay exactly screen height */
+    box-sizing: border-box; /* Ensures the padding doesn't accidentally increase the height */
 }
 
 .banner-text h2 {
@@ -88,6 +91,9 @@ label {
     flex-direction: column;
     justify-content: center;
     background-color: var(--bg-dark);
+    height: 100%; /* Forces the container to stay screen height */
+    overflow-y: auto; /* Adds a scrollbar ONLY to the right side if the form gets too tall */
+    box-sizing: border-box; /* Ensures the padding doesn't accidentally increase the height */
 }
 
 .back-link {
